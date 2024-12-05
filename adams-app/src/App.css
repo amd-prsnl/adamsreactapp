@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.mainTable {
+  width:100%;
+  border:1px solid black;
+}
+
+.mainTable > thead > tr {
+  border-bottom: 1px solid black;
+}
