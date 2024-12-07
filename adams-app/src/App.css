@@ -45,3 +45,11 @@
 .mainTable > thead > tr {
   border-bottom: 1px solid black;
 }
+
+.hiddenArea {
+  display:none;
+}
+
+#editMessage {
+  color:red;
+}
