@@ -3,8 +3,8 @@ import Status from './Status';
 import User from './User';
 import Priority from './Priority';
 import { useState } from 'react';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+//import DatePicker from "react-datepicker";
+//import "react-datepicker/dist/react-datepicker.css";
 
 const url = "https://adamsapimgmt.azure-api.net/request";
 var initialRequests = await getRequests();
