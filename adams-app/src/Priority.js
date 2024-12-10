@@ -1,4 +1,4 @@
-const url = "http://localhost:5022/priority";
+const url = "https://adamsapimgmt.azure-api.net/priority";
 
 async function Priority() {
     try {

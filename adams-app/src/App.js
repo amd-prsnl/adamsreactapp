@@ -6,7 +6,7 @@ import { useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const url = "http://localhost:5022/request";
+const url = "https://adamsapimgmt.azure-api.net/request";
 var initialRequests = await getRequests();
 const priorities = await Priority();
 const statuses = await Status();
@@ -162,7 +162,7 @@ function App() {
               }
               </select></td></tr>
             <tr><td>Problem Description</td><td><textarea id="newDescription" /></td></tr>
-            <tr><td>Due Date</td><td><DatePicker selected={startDate} onChange={(date) => setStartDate(date)} /></td></tr>
+            <tr><td>Due Date</td><td></td></tr>
             <tr><td colSpan="2"><button onClick={() => {createRequest();}}>Create</button></td></tr>
           </tbody>
         </table>        

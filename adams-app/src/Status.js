@@ -1,4 +1,4 @@
-const url = "http://localhost:5022/status";
+const url = "https://adamsapimgmt.azure-api.net/status";
 async function Status() {
     try {
         const response = await fetch(url);
