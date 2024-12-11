@@ -24,14 +24,11 @@ const initialRequest = {
   "lastModifiedDate": null
 };
 
-var i = 0;
-var maxVal = 2;
-
 function App() {
   const [requests, setRequests] = useState(initialRequests)
   const [request, setRequest] = useState(initialRequest);
-  const [startDate, setStartDate] = useState(new Date());
-  const [editDate, setEditDate] = useState(new Date());
+  //const [startDate, setStartDate] = useState(new Date());
+  //const [editDate, setEditDate] = useState(new Date());
   
   function createRequest() {
     var name = document.getElementById('newRequestName').value;
@@ -39,7 +36,7 @@ function App() {
     var priority = document.getElementById('newPriority').value;
     var desc = document.getElementById('newDescription').value;
 
-    if (name == '' || requestor == '' || priority == '' || desc == '') {
+    if (name === '' || requestor === '' || priority === '' || desc === '') {
       alert('Please fill in all fields')
     }
     else {
@@ -226,7 +223,7 @@ async function addRequest(name, requestor, priority, desc, setRequests) {
 async function editRequest(request, setRequests) {
   request.status = document.getElementById('editStatus').value;
   request.priority = document.getElementById('editPriority').value;
-  request.assigned = document.getElementById('editAssigned').value == '' ? null : document.getElementById('editAssigned').value;
+  request.assigned = document.getElementById('editAssigned').value === '' ? null : document.getElementById('editAssigned').value;
   request.requestName = document.getElementById('editRequestName').value;
   request.requestor = document.getElementById('editRequestor').value;
   request.problemDescription = document.getElementById('editProblemDescription').value;
@@ -252,7 +249,7 @@ async function editRequest(request, setRequests) {
 
 function getPriority(priority) {
   const temp = priorities.map(function (priorityVal, i) {
-      if (priorityVal.priorityId == priority)
+      if (priorityVal.priorityId === priority)
           return (
               <div key={i}>{priorityVal.priorityDescription}</div>
           );
@@ -264,7 +261,7 @@ function getPriority(priority) {
 
 function getStatus(status) {
   const temp = statuses.map(function (statusVal, i) {
-      if (statusVal.statusId == status)
+      if (statusVal.statusId === status)
           return (
               <div key={i}>{statusVal.statusDescription}</div>
           );
@@ -276,7 +273,7 @@ function getStatus(status) {
 
 function getUser(user) {
   const temp = users.map(function (userVal, i) {
-      if (userVal.userId == user)
+      if (userVal.userId === user)
           return (
               <div key={i}>{userVal.userName}</div>
           );
