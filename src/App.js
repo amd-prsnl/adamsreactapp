@@ -7,7 +7,7 @@ import { useState } from 'react';
 //import "react-datepicker/dist/react-datepicker.css";
 
 const url = "https://adamsapimgmt.azure-api.net/request";
-var initialRequests = await getRequests();
+const initialRequests = await getRequests();
 const priorities = await Priority();
 const statuses = await Status();
 const users = await User();
@@ -177,7 +177,8 @@ async function getRequests () {
     const response = await fetch(url, {   method:'GET',
       mode: 'cors',
       headers:{
-          'Access-Control-Allow-Origin':'*'
+          'Access-Control-Allow-Origin':'*',
+          'subscription-key': 'd50bc5f9220c4b8991707c58f08ee755'
       },
   });
     if (!response.ok) {
@@ -196,7 +197,8 @@ async function addRequest(name, requestor, priority, desc, setRequests) {
   const requestMetadata = {
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'subscription-key': 'd50bc5f9220c4b8991707c58f08ee755'
     },
     body: JSON.stringify({"requestId":0, 
       "requestName":name, 
@@ -232,7 +234,8 @@ async function editRequest(request, setRequests) {
   const requestMetadata = {
     method: 'PUT',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'subscription-key': 'd50bc5f9220c4b8991707c58f08ee755'
     },
     body: JSON.stringify(request)
   };
